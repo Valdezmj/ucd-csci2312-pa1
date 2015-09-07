@@ -5,7 +5,7 @@
 #include "Point.h"
 #include <cmath>
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 double computeArea(Point p[], double &area);
@@ -33,7 +33,7 @@ int main(void) {
 
     // Output the area between the 3 points to the user 
     computeArea(p, area);
-    cout << "The area between you're three points that you have created is: " << area << endl;
+    cout << setprecision(2) << "The area between you're three points that you have created is: " << area << endl;
 
     return 0;
 }
@@ -50,7 +50,6 @@ double computeArea(Point p[], double &area) {
    double sideB = p[1].distanceTo(p[2]);
    double sideC = p[2].distanceTo(p[0]);
    los = .5 * (sideA + sideB + sideC);
-   cout << "los: " << los << " side a: " << sideA << " side b: " << sideB << " side c: " << sideC << endl;
 
    if (p[0].getX() == p[1].getX()) {
       if (p[0].getY() == p[1].getY()) {
